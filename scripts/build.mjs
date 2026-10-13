@@ -4,7 +4,7 @@ import { resolve, dirname, sep } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const output = resolve(root, 'dist');
 const html = await readFile(resolve(root, 'index.html'), 'utf8');
-const files = new Set(['index.html', 'style.css', 'script.js']);
+const files = new Set(['index.html', 'style.css', 'script.js', 'robots.txt', 'sitemap.xml']);
 for (const [, url] of html.matchAll(/\b(?:src|href|poster)="([^"]+)"/g)) {
   if (/^(?:#|https?:|mailto:|tel:|data:)/.test(url)) continue;
   const path = decodeURIComponent(url);
