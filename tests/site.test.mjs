@@ -21,7 +21,7 @@ test('local resources and anchor destinations resolve', () => {
   }
 });
 
-test('all eight projects are readable through native disclosures', () => {
-  assert.equal((html.match(/<details\b/g) || []).length, 8);
-  assert.equal((html.match(/<summary\b/g) || []).length, 8);
+test('all ten projects are readable through native disclosures', () => {
+  assert.equal((html.match(/<details\b/g) || []).length, 10);
+  assert.equal((html.match(/<summary\b/g) || []).length, 10);
 });
