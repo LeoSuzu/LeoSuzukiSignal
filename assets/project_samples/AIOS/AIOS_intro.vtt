@@ -1,0 +1,160 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:02.079
+This is AIOS:
+
+00:00:02.079 --> 00:00:04.736
+my personal AI operating system.
+
+00:00:05.036 --> 00:00:09.050
+It turns several AI models into one team that works on my projects,
+
+00:00:09.050 --> 00:00:10.846
+remembers what it has learned,
+
+00:00:10.846 --> 00:00:13.422
+and asks before it does anything important.
+
+00:00:14.872 --> 00:00:17.965
+Most AI tools start every conversation from zero,
+
+00:00:17.965 --> 00:00:19.227
+in their own window,
+
+00:00:19.227 --> 00:00:20.552
+with their own rules.
+
+00:00:20.852 --> 00:00:24.163
+I wanted one system where the models share context,
+
+00:00:24.163 --> 00:00:25.591
+follow the same rules,
+
+00:00:25.591 --> 00:00:27.278
+and stay under my control.
+
+00:00:28.728 --> 00:00:30.659
+AIOS is built in layers.
+
+00:00:30.959 --> 00:00:33.343
+At the top is a desktop control panel.
+
+00:00:33.643 --> 00:00:38.196
+Under it runs ClaudeOS, powered by Claude Code, which owns the system.
+
+00:00:38.196 --> 00:00:42.423
+Codex joins as an expert partner for reviews and second opinions.
+
+00:00:42.723 --> 00:00:44.841
+Routine work goes to fast workers:
+
+00:00:44.841 --> 00:00:48.764
+Groq in the cloud, and Ollama models running locally on my Mac.
+
+00:00:50.214 --> 00:00:53.654
+Inside ClaudeOS, named agents have clear roles.
+
+00:00:53.954 --> 00:00:55.733
+MoMo coordinates the work.
+
+00:00:56.033 --> 00:00:59.033
+CoCo builds, and runs engineering loops.
+
+00:00:59.333 --> 00:01:01.049
+FiFi does the research.
+
+00:01:01.349 --> 00:01:03.698
+A Groq research agent searches the web,
+
+00:01:03.698 --> 00:01:07.553
+and local Ollama models handle private or bulk tasks at no cost.
+
+00:01:09.003 --> 00:01:10.986
+Memory lives in the Second Brain:
+
+00:01:10.986 --> 00:01:15.252
+a shared folder of plain files that every agent reads before it starts.
+
+00:01:15.552 --> 00:01:19.500
+Hot memory holds current tasks, messages and decisions.
+
+00:01:19.800 --> 00:01:22.811
+Each project keeps its own memory and handoff notes,
+
+00:01:22.811 --> 00:01:25.242
+and older knowledge moves to cold storage.
+
+00:01:25.542 --> 00:01:29.145
+It is all versioned in git, so every change can be traced.
+
+00:01:30.595 --> 00:01:32.003
+Rules come first.
+
+00:01:32.303 --> 00:01:36.312
+A shared contract and a list of prohibited actions apply to every agent.
+
+00:01:36.612 --> 00:01:37.590
+Anything risky,
+
+00:01:37.590 --> 00:01:38.764
+like merging code,
+
+00:01:38.764 --> 00:01:40.917
+pushing to git or deleting files,
+
+00:01:40.917 --> 00:01:43.591
+becomes a proposal in the approval inbox,
+
+00:01:43.591 --> 00:01:45.091
+in English and Finnish,
+
+00:01:45.091 --> 00:01:46.787
+and waits for my decision.
+
+00:01:48.237 --> 00:01:51.363
+A scheduler built on Node-RED runs tasks on its own.
+
+00:01:51.663 --> 00:01:52.907
+Nightly maintenance,
+
+00:01:52.907 --> 00:01:56.139
+a memory organiser that keeps the Second Brain tidy,
+
+00:01:56.139 --> 00:01:57.321
+and research loops.
+
+00:01:57.621 --> 00:02:01.096
+Every run writes a log, and failures show up as alerts.
+
+00:02:02.546 --> 00:02:05.133
+The control panel is an Electron desktop app.
+
+00:02:05.433 --> 00:02:08.606
+A live graph shows the Second Brain and how it connects.
+
+00:02:08.906 --> 00:02:11.265
+Charts track usage for each provider,
+
+00:02:11.565 --> 00:02:17.211
+and from one chat box I can talk to any agent, run a task, or approve an inbox item.
+
+00:02:18.661 --> 00:02:20.016
+Away from the desk,
+
+00:02:20.016 --> 00:02:24.224
+AIOS Remote lets me ask for status or file a note by voice,
+
+00:02:24.224 --> 00:02:25.294
+from my iPhone.
+
+00:02:26.744 --> 00:02:28.181
+One team of models.
+
+00:02:28.181 --> 00:02:29.543
+One shared memory.
+
+00:02:29.543 --> 00:02:30.450
+Clear rules.
+
+00:02:30.750 --> 00:02:32.155
+That's AIOS.

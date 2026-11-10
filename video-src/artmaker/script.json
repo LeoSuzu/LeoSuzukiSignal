@@ -1,0 +1,39 @@
+{
+  "title": "Art Maker Studio — introduction",
+  "out": "assets/project_samples/Art_Maker_Studio/ArtMakerStudio_intro",
+  "voice": "Daniel",
+  "rate": 185,
+  "poster": 4.0,
+  "scenes": [
+    { "id": "intro", "say": [
+      "Art Maker Studio is a desktop app, written in Python, that turns any photo into generative art.",
+      "Pick a picture, choose a style, and watch it being painted."
+    ] },
+    { "id": "palette", "say": [
+      "First, the app reads the photo's colour palette with Colorgram.",
+      "Those colours become the paint."
+    ] },
+    { "id": "dots", "say": [
+      "Dot Art lays the palette out as a calm grid of coloured dots."
+    ], "min": 7 },
+    { "id": "walk", "say": [
+      "Random Walk Art sends thirty turtles wandering across the canvas,",
+      "each one turning at right angles, and leaving a trail of colour behind it."
+    ] },
+    { "id": "circles", "say": [
+      "Circle Art sweeps huge, overlapping arcs in thick strokes,",
+      "so every image gets a different rhythm."
+    ] },
+    { "id": "controls", "say": [
+      "Sliders set the number of dots, steps or circles, and the background colour.",
+      "Drawing can be stopped at any time, and the finished work is saved automatically."
+    ] },
+    { "id": "build", "say": [
+      "It is built with Tkinter for the interface and Turtle for the drawing,",
+      "and PyInstaller packages it as a real app for both macOS and Windows."
+    ] },
+    { "id": "outro", "say": [
+      "Art Maker Studio. Code that paints."
+    ], "tail": 1.6 }
+  ]
+}

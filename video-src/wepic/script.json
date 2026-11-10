@@ -1,0 +1,40 @@
+{
+  "title": "WePic for Android — introduction",
+  "out": "assets/project_samples/WePicAndroid/WePic_intro",
+  "voice": "Daniel",
+  "rate": 185,
+  "poster": 3.0,
+  "scenes": [
+    { "id": "intro", "say": [
+      { "text": "WePic is an Android app that shows the weather together with a photo of the place.", "speak": "We-Pic is an Android app that shows the weather, together with a photo of the place." },
+      "Not an icon of a cloud, but the real view."
+    ] },
+    { "id": "idea", "say": [
+      "The background is a photo from Unsplash, matched to the location,",
+      "and to the current weather when a matching photo exists. If not, it simply shows the city."
+    ] },
+    { "id": "modes", "say": [
+      "There are three ways to look at the world.",
+      "Your current location,",
+      "any city you search for,",
+      "or a random city somewhere on the planet."
+    ] },
+    { "id": "forecast", "say": [
+      "Every view shows live weather from OpenWeather,",
+      "a twenty-four hour forecast you can swipe through,",
+      "and the local time at that place."
+    ] },
+    { "id": "landscape", "say": [
+      "Turn the phone or tablet sideways, and the weather moves to a slim strip,",
+      "so the photo fills the screen, like a window onto another city."
+    ] },
+    { "id": "build", "say": [
+      "It is written in Kotlin with Jetpack Compose and Retrofit.",
+      "A small Cloudflare Worker keeps the API keys off the phone and caches answers, so many users looking at one city cost a single request.",
+      "A cross-platform Flutter port is written, and the Android app is being prepared for Google Play."
+    ] },
+    { "id": "outro", "say": [
+      { "text": "WePic. See the weather the way it looks.", "speak": "We-Pic. See the weather, the way it looks." }
+    ], "tail": 1.6 }
+  ]
+}

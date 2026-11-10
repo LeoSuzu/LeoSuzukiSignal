@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:06.413
+Marjo Seki is an author and a teacher of Japanese cooking, based in Kouvola, Finland.
+
+00:00:06.713 --> 00:00:11.176
+I designed and built a new website for Marjo through my company, Findaco.
+
+00:00:12.626 --> 00:00:15.250
+The site has five pages, in Finnish.
+
+00:00:15.550 --> 00:00:17.493
+A home page with Marjo's story,
+
+00:00:17.793 --> 00:00:19.759
+cooking courses and services,
+
+00:00:20.059 --> 00:00:20.747
+books,
+
+00:00:21.047 --> 00:00:22.339
+upcoming events,
+
+00:00:22.639 --> 00:00:24.129
+and a contact page.
+
+00:00:25.579 --> 00:00:29.574
+The look is warm and playful, inspired by Japanese food culture:
+
+00:00:29.874 --> 00:00:31.228
+soft colour bubbles,
+
+00:00:31.228 --> 00:00:32.244
+rounded photos,
+
+00:00:32.244 --> 00:00:34.952
+and clear type that works on any screen,
+
+00:00:34.952 --> 00:00:36.713
+from a phone to a desktop.
+
+00:00:38.163 --> 00:00:40.344
+The client runs the site without me.
+
+00:00:40.644 --> 00:00:42.993
+A small pencil icon opens a login,
+
+00:00:43.293 --> 00:00:46.663
+and every text and image can then be edited right on the page.
+
+00:00:48.113 --> 00:00:50.310
+One button publishes the changes.
+
+00:00:50.610 --> 00:00:52.512
+The content is saved to GitHub,
+
+00:00:52.812 --> 00:00:54.464
+Vercel rebuilds the site,
+
+00:00:54.764 --> 00:00:57.067
+and the update is live in about a minute.
+
+00:00:57.067 --> 00:00:59.145
+No code, and no git knowledge needed.
+
+00:01:00.595 --> 00:01:04.648
+Book orders and course enquiries go through small serverless functions,
+
+00:01:04.648 --> 00:01:06.646
+and arrive by email through Resend.
+
+00:01:06.946 --> 00:01:11.021
+Passwords and API keys stay on the server, never in the browser.
+
+00:01:12.471 --> 00:01:18.001
+Under the hood, it is plain HTML, CSS and JavaScript, with no framework,
+
+00:01:18.301 --> 00:01:21.158
+so it loads fast and stays easy to maintain.
+
+00:01:22.608 --> 00:01:23.341
+marjoseki.
+
+00:01:23.341 --> 00:01:27.742
+fi — a fast, friendly website that the client owns and runs.

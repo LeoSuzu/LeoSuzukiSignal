@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:05.484
+WePic is an Android app that shows the weather together with a photo of the place.
+
+00:00:05.784 --> 00:00:08.434
+Not an icon of a cloud, but the real view.
+
+00:00:09.884 --> 00:00:13.957
+The background is a photo from Unsplash, matched to the location,
+
+00:00:14.257 --> 00:00:17.700
+and to the current weather when a matching photo exists.
+
+00:00:17.700 --> 00:00:19.729
+If not, it simply shows the city.
+
+00:00:21.179 --> 00:00:23.386
+There are three ways to look at the world.
+
+00:00:23.686 --> 00:00:25.151
+Your current location,
+
+00:00:25.451 --> 00:00:27.221
+any city you search for,
+
+00:00:27.521 --> 00:00:29.847
+or a random city somewhere on the planet.
+
+00:00:31.297 --> 00:00:33.785
+Every view shows live weather from OpenWeather,
+
+00:00:34.085 --> 00:00:37.072
+a twenty-four hour forecast you can swipe through,
+
+00:00:37.372 --> 00:00:39.385
+and the local time at that place.
+
+00:00:40.835 --> 00:00:44.966
+Turn the phone or tablet sideways, and the weather moves to a slim strip,
+
+00:00:45.266 --> 00:00:49.225
+so the photo fills the screen, like a window onto another city.
+
+00:00:50.675 --> 00:00:53.953
+It is written in Kotlin with Jetpack Compose and Retrofit.
+
+00:00:54.253 --> 00:00:59.040
+A small Cloudflare Worker keeps the API keys off the phone and caches answers,
+
+00:00:59.040 --> 00:01:02.476
+so many users looking at one city cost a single request.
+
+00:01:02.776 --> 00:01:05.103
+A cross-platform Flutter port is written,
+
+00:01:05.103 --> 00:01:08.167
+and the Android app is being prepared for Google Play.
+
+00:01:09.617 --> 00:01:10.050
+WePic.
+
+00:01:10.050 --> 00:01:12.429
+See the weather the way it looks.

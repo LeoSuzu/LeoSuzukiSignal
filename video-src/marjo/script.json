@@ -1,0 +1,48 @@
+{
+  "title": "Marjo Seki website — introduction",
+  "out": "assets/project_samples/MarjoSeki/MarjoSeki_intro",
+  "voice": "Daniel",
+  "rate": 185,
+  "poster": 3.0,
+  "scenes": [
+    { "id": "intro", "say": [
+      "Marjo Seki is an author and a teacher of Japanese cooking, based in Kouvola, Finland.",
+      "I designed and built a new website for Marjo through my company, Findaco."
+    ] },
+    { "id": "pages", "say": [
+      "The site has five pages, in Finnish.",
+      "A home page with Marjo's story,",
+      "cooking courses and services,",
+      "books,",
+      "upcoming events,",
+      "and a contact page."
+    ] },
+    { "id": "look", "say": [
+      "The look is warm and playful, inspired by Japanese food culture:",
+      "soft colour bubbles, rounded photos, and clear type that works on any screen, from a phone to a desktop."
+    ] },
+    { "id": "edit", "say": [
+      "The client runs the site without me.",
+      "A small pencil icon opens a login,",
+      "and every text and image can then be edited right on the page."
+    ] },
+    { "id": "publish", "say": [
+      "One button publishes the changes.",
+      "The content is saved to GitHub,",
+      "Vercel rebuilds the site,",
+      "and the update is live in about a minute. No code, and no git knowledge needed."
+    ] },
+    { "id": "forms", "say": [
+      "Book orders and course enquiries go through small serverless functions, and arrive by email through Resend.",
+      "Passwords and API keys stay on the server, never in the browser."
+    ] },
+    { "id": "stack", "say": [
+      "Under the hood, it is plain HTML, CSS and JavaScript, with no framework,",
+      "so it loads fast and stays easy to maintain."
+    ] },
+    { "id": "outro", "say": [
+      { "text": "marjoseki.fi — a fast, friendly website that the client owns and runs.",
+        "speak": "Marjo Seki dot F I. A fast, friendly website that the client owns and runs." }
+    ], "tail": 1.6 }
+  ]
+}

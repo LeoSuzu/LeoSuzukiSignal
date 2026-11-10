@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Marjo Seki website — introduction</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  :root { --leaf: #9fcf8f; --blossom: #eda6bb; --rice: #f4ecd8; }
+  .bubbles { position: absolute; inset: -10%; background: url(media/balls-large.svg) center / cover; opacity: .10; }
+  .kanji { position: absolute; font: 600 300px/1 "Hiragino Mincho ProN", serif; color: #ffffff09; writing-mode: vertical-rl; }
+  .script { font: italic 800 150px/1 "Georgia", serif; letter-spacing: -.02em; color: var(--rice); }
+  .leaf { color: var(--leaf); } .blossom { color: var(--blossom); }
+  .chip.leaf i { background: var(--leaf); color: var(--leaf); } .chip.blossom i { background: var(--blossom); color: var(--blossom); }
+  .stackcard { position: absolute; width: 820px; }
+  .plabel b { display: block; font: 700 46px/1.1 var(--display); color: var(--rice); }
+  .plabel span { font: 500 22px var(--mono); color: var(--muted); letter-spacing: .08em; }
+  .pencil { position: absolute; width: 74px; height: 74px; border-radius: 50%; border: 4px solid var(--blossom); box-shadow: 0 0 0 12px #eda6bb33; }
+  .login { position: absolute; left: 760px; top: 420px; width: 420px; background: #fffaf2; color: #2f3a2a; border-radius: 20px; padding: 34px; box-shadow: 0 30px 80px #0008; font-size: 24px; }
+  .login .f { height: 52px; border: 1px solid #cfd8c6; border-radius: 10px; margin: 10px 0 18px; padding: 0 16px; font: 500 22px/52px var(--mono); color: #6c7a63; }
+  .login .go { background: #7fae73; color: #fff; text-align: center; border-radius: 10px; padding: 12px; font-weight: 600; }
+  .editbox { position: absolute; border: 3px dashed var(--blossom); border-radius: 10px; background: #eda6bb14; }
+  .toolbar { position: absolute; left: 360px; top: 130px; width: 1200px; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-radius: 14px; background: #2f3a2a; color: var(--rice); font: 600 22px var(--mono); box-shadow: 0 16px 40px #0009; }
+  .toolbar .pub { background: var(--leaf); color: #1d2a19; padding: 8px 18px; border-radius: 10px; }
+  .caret { display: inline-block; width: 4px; height: 52px; background: var(--blossom); vertical-align: middle; }
+  .flow { position: absolute; left: 140px; right: 140px; top: 470px; display: flex; align-items: center; gap: 22px; }
+  .flow .node { flex: 1; padding: 30px 20px; font-size: 34px; }
+  .flow .node b { display: block; font-size: 54px; margin-bottom: 8px; }
+  .flow .arrow { font-size: 40px; }
+  .stat { text-align: left; }
+  .stat b { display: block; font: 700 150px/1 var(--display); color: var(--leaf); }
+  .stat span { font: 600 26px var(--mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+  .formcard { width: 470px; background: #fffaf2; color: #2f3a2a; border-radius: 18px; padding: 30px; box-shadow: 0 30px 80px #0008; font-size: 24px; }
+  .formcard .f { height: 44px; border: 1px solid #cfd8c6; border-radius: 9px; margin: 8px 0 14px; padding: 0 14px; font: 500 20px/44px var(--mono); color: #6c7a63; }
+  .mail { width: 520px; }
+  .mail .from { font: 600 20px var(--mono); color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="glow" style="left:-200px;top:-200px;width:900px;height:900px;background:#9fcf8f;opacity:.10"></div>
+  <div class="glow" style="right:-250px;bottom:-250px;width:1000px;height:1000px;background:#eda6bb;opacity:.10"></div>
+  <div class="chapter"></div>
+  <div class="brand">LEO SUZUKI · <b>FINDACO</b></div>
+
+  <!-- 1 -->
+  <section class="scene" data-id="intro" data-chapter="Client website">
+    <div class="kanji" style="left:40px;top:120px" data-in="0" data-fx="fade" data-dur="2">和食</div>
+    <div style="position:absolute;left:140px;top:300px;width:720px">
+      <p class="kicker" style="color:var(--leaf)" data-in="0.3" data-fx="fade">Website · built by Findaco</p>
+      <div class="script" data-in="0.4" data-fx="blur" data-dur="1.3">Marjo Seki</div>
+      <p class="lead" style="font-size:36px" data-in="1.4">Author · Japanese cooking teacher · Kouvola, Finland</p>
+      <div class="chips" style="margin-top:40px">
+        <span class="chip leaf" data-cue="1" data-fx="up"><i></i>Design</span>
+        <span class="chip blossom" data-cue="1" data-in="0.5" data-fx="up"><i></i>Build</span>
+        <span class="chip" data-cue="1" data-in="1" data-fx="up"><i></i>Hosting &amp; editing</span>
+      </div>
+    </div>
+    <div class="browser" style="position:absolute;right:100px;top:230px;width:900px" data-in="0.6" data-fx="right" data-dur="1.2">
+      <div class="bar"><i></i><i></i><i></i><span>marjoseki.fi</span></div>
+      <div style="overflow:hidden"><img src="media/index.jpg" alt="" data-kb="in" style="transform-origin:70% 40%"></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene" data-id="pages" data-chapter="01 · Pages">
+    <h2 data-cue="0">Five pages.</h2>
+    <div class="col" style="gap:22px;margin-top:20px">
+      <div class="plabel" data-cue="1" data-fx="left"><b class="leaf">Etusivu</b><span>home · story</span></div>
+      <div class="plabel" data-cue="2" data-fx="left"><b class="blossom">Palvelut</b><span>courses</span></div>
+      <div class="plabel" data-cue="3" data-fx="left"><b class="leaf">Kirjat</b><span>books</span></div>
+      <div class="plabel" data-cue="4" data-fx="left"><b class="blossom">Tapahtumia</b><span>events</span></div>
+      <div class="plabel" data-cue="5" data-fx="left"><b class="">Yhteystiedot</b><span>contact</span></div>
+    </div>
+    <div class="stackcard browser" style="left:560px;top:260px" data-cue="1" data-fx="up"><div class="bar"><i></i><i></i><i></i><span>marjoseki.fi</span></div><img src="media/index.jpg" alt=""></div>
+    <div class="stackcard browser" style="left:655px;top:308px" data-cue="2" data-fx="up"><div class="bar"><i></i><i></i><i></i><span>marjoseki.fi/palvelut</span></div><img src="media/palvelut.jpg" alt=""></div>
+    <div class="stackcard browser" style="left:750px;top:356px" data-cue="3" data-fx="up"><div class="bar"><i></i><i></i><i></i><span>marjoseki.fi/kirjat</span></div><img src="media/kirjat.jpg" alt=""></div>
+    <div class="stackcard browser" style="left:845px;top:404px" data-cue="4" data-fx="up"><div class="bar"><i></i><i></i><i></i><span>marjoseki.fi/tapahtumia</span></div><img src="media/tapahtumia.jpg" alt=""></div>
+    <div class="stackcard browser" style="left:940px;top:452px" data-cue="5" data-fx="up"><div class="bar"><i></i><i></i><i></i><span>marjoseki.fi/yhteystiedot</span></div><img src="media/yhteystiedot.jpg" alt=""></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene" data-id="look" data-chapter="02 · Design">
+    <p class="kicker" style="color:var(--blossom)" data-in="0.1" data-fx="fade">Design</p>
+    <h2 data-cue="0">Warm, playful, readable.</h2>
+    <div class="browser" style="position:absolute;left:140px;top:340px;width:1040px" data-cue="0" data-in="0.8" data-fx="up">
+      <div class="bar"><i></i><i></i><i></i><span>marjoseki.fi</span></div>
+      <div style="overflow:hidden;height:600px"><img src="media/index_2.jpg" alt="" data-kb="left"></div>
+    </div>
+    <div class="phone" style="position:absolute;right:250px;top:130px;width:390px" data-cue="1" data-fx="up" data-dur="1"><img src="media/mobile.jpg" alt=""></div>
+    <div class="callout" style="right:600px;top:820px;border-color:var(--leaf)" data-cue="1" data-in="2.2" data-fx="pop"><b class="leaf">●</b> phone · tablet · desktop</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene" data-id="edit" data-chapter="03 · Edit mode">
+    <p class="kicker" style="color:var(--leaf);position:absolute;top:120px" data-in="0.1" data-fx="fade" data-outcue="2" data-out="-0.3">The client edits the site</p>
+    <div class="browser" style="position:absolute;left:360px;top:190px;width:1200px" data-cue="0" data-fx="zoom">
+      <div class="bar"><i></i><i></i><i></i><span>marjoseki.fi</span></div>
+      <img src="media/index.jpg" alt="">
+    </div>
+    <div class="pencil" style="left:1373px;top:265px" data-cue="1" data-fx="pop" data-outcue="2" data-out="0.6"></div>
+    <div class="login" data-cue="1" data-in="0.9" data-fx="zoom" data-outcue="2" data-out="0.1">
+      <b style="font-size:28px">Kirjaudu muokkaamaan</b>
+      <div class="f" style="margin-top:20px">marjo</div>
+      <div class="f">••••••••••</div>
+      <div class="go">Kirjaudu</div>
+    </div>
+    <div class="toolbar" data-cue="2" data-in="0.5" data-fx="down"><span>✎ Muokkaustila päällä · edit mode on</span><span class="pub">Julkaise sivulle</span></div>
+    <div class="editbox" style="left:478px;top:452px;width:452px;height:278px" data-cue="2" data-in="1" data-fx="fade"></div>
+    <div class="editbox" style="left:1080px;top:433px;width:282px;height:375px" data-cue="2" data-in="1.6" data-fx="fade"></div>
+    <div class="callout" style="left:500px;top:760px;border-color:var(--blossom)" data-cue="2" data-in="2.2" data-fx="pop"><b class="blossom">✎</b> text and images edited in place</div>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene" data-id="publish" data-chapter="04 · Publishing">
+    <p class="kicker" style="color:var(--leaf)" data-in="0.1" data-fx="fade">One button</p>
+    <h2 data-cue="0">Publish → live in about a minute.</h2>
+    <div class="flow">
+      <div class="node" data-cue="0" data-in="1" data-fx="up"><b class="blossom">✎</b>Edit on the page<small>draft saved in the browser</small></div>
+      <div class="arrow" data-cue="1" data-fx="left">→</div>
+      <div class="node" data-cue="1" data-in="0.3" data-fx="up"><b>⎇</b>GitHub<small>content/site.json committed</small></div>
+      <div class="arrow" data-cue="2" data-fx="left">→</div>
+      <div class="node" data-cue="2" data-in="0.3" data-fx="up"><b>▲</b>Vercel<small>rebuild &amp; deploy</small></div>
+      <div class="arrow" data-cue="3" data-fx="left">→</div>
+      <div class="node" style="border-color:var(--leaf)" data-cue="3" data-in="0.3" data-fx="pop"><b class="leaf">●</b>Live<small>marjoseki.fi</small></div>
+    </div>
+    <div class="chips" style="position:absolute;left:140px;top:780px">
+      <span class="chip leaf" data-cue="3" data-in="2.5" data-fx="up"><i></i>no code</span>
+      <span class="chip blossom" data-cue="3" data-in="3.2" data-fx="up"><i></i>no git knowledge</span>
+      <span class="chip" data-cue="3" data-in="3.9" data-fx="up"><i></i>backup export / import</span>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene" data-id="forms" data-chapter="05 · Orders & enquiries">
+    <p class="kicker" style="color:var(--leaf)" data-in="0.1" data-fx="fade">Forms</p>
+    <h2 data-cue="0">Orders arrive by email.</h2>
+    <div class="row" style="margin-top:50px;align-items:center;gap:34px">
+      <div class="formcard" data-cue="0" data-in="0.6" data-fx="up">
+        <b style="font-size:28px">Tilaa kirja · order a book</b>
+        <div class="f" style="margin-top:16px">Okazu</div><div class="f">nimi@esimerkki.fi</div>
+        <div class="go" style="background:#7fae73;color:#fff;text-align:center;border-radius:9px;padding:10px;font-weight:600">Lähetä</div>
+      </div>
+      <div class="arrow" data-cue="0" data-in="2.4" data-fx="left">→</div>
+      <div class="node" data-cue="0" data-in="2.8" data-fx="up">Serverless function<small>api/submit-form.js</small></div>
+      <div class="arrow" data-cue="0" data-in="4.2" data-fx="left">→</div>
+      <div class="card mail" data-cue="0" data-in="4.6" data-fx="up"><div class="from">via Resend</div><h3 style="margin-top:8px">New book order</h3><p>Okazu · 1 copy · reply to customer</p></div>
+    </div>
+    <span class="chip" style="position:absolute;left:140px;top:860px" data-cue="1" data-fx="up"><i style="background:var(--amber);color:var(--amber)"></i>🔒 passwords and API keys stay on the server</span>
+  </section>
+
+  <!-- 7 -->
+  <section class="scene" data-id="stack" data-chapter="06 · Stack">
+    <p class="kicker" style="color:var(--leaf)" data-in="0.1" data-fx="fade">Under the hood</p>
+    <h2 data-cue="0">Plain web. Fast by default.</h2>
+    <div class="row" style="gap:120px;margin-top:70px">
+      <div class="stat" data-cue="0" data-in="1.2" data-fx="up"><b data-cue="0" data-in="1.2" data-count="5" data-dur="1.4">0</b><span>pages</span></div>
+      <div class="stat" data-cue="0" data-in="2.2" data-fx="up"><b class="blossom">0</b><span>frameworks</span></div>
+      <div class="stat" data-cue="1" data-fx="up"><b style="color:var(--rice)">1</b><span>content file</span></div>
+    </div>
+    <div class="chips" style="margin-top:80px">
+      <span class="chip" data-cue="0" data-in="0.6" data-fx="up"><i></i>HTML</span>
+      <span class="chip" data-cue="0" data-in="0.9" data-fx="up"><i></i>CSS</span>
+      <span class="chip" data-cue="0" data-in="1.2" data-fx="up"><i></i>JavaScript</span>
+      <span class="chip leaf" data-cue="1" data-in="0.4" data-fx="up"><i></i>Vercel functions</span>
+      <span class="chip blossom" data-cue="1" data-in="0.8" data-fx="up"><i></i>GitHub Contents API</span>
+      <span class="chip" data-cue="1" data-in="1.2" data-fx="up"><i></i>Resend</span>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="scene center" data-id="outro" data-chapter="marjoseki.fi">
+    <div class="kanji" style="right:60px;top:120px">料理</div>
+    <div style="position:relative">
+      <div class="script" style="font-size:180px" data-cue="0" data-fx="blur" data-dur="1.3">Marjo Seki</div>
+      <p class="kicker" style="margin-top:44px;font-size:34px;color:var(--leaf)" data-cue="0" data-in="0.8" data-fx="fade">marjoseki.fi</p>
+      <p class="kicker" style="margin-top:20px;color:var(--muted)" data-cue="0" data-in="2" data-fx="fade">Built by Leo Suzuki · Oy Findaco Ltd</p>
+    </div>
+  </section>
+
+  <div class="progress"><i></i></div>
+</div>
+<script src="../engine.js"></script>
+</body>
+</html>

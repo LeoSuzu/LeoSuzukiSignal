@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Art Maker Studio — introduction</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  :root { --plum: #c58fb8; --peach: #da9a6d; }
+  .plum { color: var(--plum); } .peach { color: var(--peach); }
+  .win { position: absolute; border-radius: 14px; overflow: hidden; background: #fbfaf7; box-shadow: 0 40px 110px #000c; border: 1px solid #ffffff22; }
+  .win .bar { height: 42px; display: flex; align-items: center; gap: 9px; padding: 0 16px; background: #2a2f33; font: 600 17px var(--mono); color: var(--muted); }
+  .win .bar i { width: 13px; height: 13px; border-radius: 50%; background: #ff5f57; } .win .bar i:nth-child(2) { background: #febc2e; } .win .bar i:nth-child(3) { background: #28c840; }
+  .win .bar span { flex: 1; text-align: center; margin-right: 60px; }
+  .win canvas { display: block; }
+  .left { position: absolute; left: 140px; top: 260px; width: 560px; }
+  .swatches { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+  .sw { width: 92px; height: 92px; border-radius: 18px; box-shadow: 0 14px 30px #0008; }
+  .hex { font: 500 18px var(--mono); color: var(--muted); text-align: center; margin-top: 8px; }
+  .photo { position: absolute; border-radius: 16px; overflow: hidden; box-shadow: 0 40px 110px #000c; }
+  .photo img { display: block; width: 100%; }
+  .side { position: absolute; left: 140px; top: 190px; width: 520px; background: #f1eee8; color: #26292b; border-radius: 16px; padding: 30px; box-shadow: 0 30px 80px #000a; font-size: 24px; }
+  .side .b { background: #3d6b8f; color: #fff; text-align: center; padding: 14px; border-radius: 10px; font-weight: 600; margin: 10px 0; }
+  .side .b2 { background: #fff; color: #26292b; border: 1px solid #c9c4ba; text-align: center; padding: 12px; border-radius: 10px; font-weight: 600; margin: 10px 0; }
+  .side label { display: block; font: 600 18px var(--mono); color: #6a6f72; letter-spacing: .08em; text-transform: uppercase; margin: 18px 0 8px; }
+  .side .sel { border: 1px solid #c9c4ba; background: #fff; border-radius: 10px; padding: 10px 16px; }
+  .slider { height: 8px; border-radius: 4px; background: #d9d4cb; position: relative; margin: 14px 0 6px; }
+  .slider i { position: absolute; top: -9px; width: 26px; height: 26px; border-radius: 50%; background: #3d6b8f; }
+  .slider u { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: #3d6b8f; }
+  .sv { font: 600 20px var(--mono); color: #26292b; float: right; }
+  .bigtitle { font: 700 130px/0.95 var(--display); letter-spacing: -.03em; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="chapter"></div>
+  <div class="brand">LEO SUZUKI · <b>ART MAKER STUDIO</b></div>
+
+  <!-- 1 -->
+  <section class="scene" data-id="intro" data-chapter="Desktop app · Python">
+    <div class="left" style="top:290px">
+      <p class="kicker plum" data-in="0.3" data-fx="fade">Generative art</p>
+      <div class="bigtitle" data-in="0.4" data-fx="blur" data-dur="1.3">Art Maker<br><span class="peach">Studio</span></div>
+      <div class="chips" style="margin-top:44px">
+        <span class="chip" data-cue="1" data-fx="up"><i></i>pick a picture</span>
+        <span class="chip" data-cue="1" data-in="0.6" data-fx="up"><i style="background:var(--peach)"></i>choose a style</span>
+        <span class="chip" data-cue="1" data-in="1.2" data-fx="up"><i style="background:var(--plum)"></i>watch it paint</span>
+      </div>
+    </div>
+    <div class="win" style="left:820px;top:200px" data-in="0.7" data-fx="right" data-dur="1.2"><div class="bar"><i></i><i></i><i></i><span>Circle Art</span></div><canvas id="c-intro" width="960" height="620"></canvas></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene" data-id="palette" data-chapter="01 · Palette">
+    <p class="kicker plum" data-in="0.1" data-fx="fade">Step one</p>
+    <h2 data-cue="0">The photo becomes the paint.</h2>
+    <div class="photo" style="left:140px;top:350px;width:760px" data-cue="0" data-in="0.6" data-fx="zoom"><img src="media/sunset.jpg" alt="" data-kb="in"></div>
+    <div style="position:absolute;left:1000px;top:380px;width:780px">
+      <div class="tag" style="font:600 22px var(--mono);letter-spacing:.16em;color:var(--amber)" data-cue="0" data-in="2" data-fx="fade">colorgram.extract(image, 10)</div>
+      <div class="swatches" id="swatches"></div>
+      <p class="lead" style="font-size:32px;margin-top:40px" data-cue="1" data-fx="up">Ten colours, ranked by how much of the photo they cover.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene" data-id="dots" data-chapter="02 · Dot Art">
+    <div class="left"><p class="kicker plum" data-in="0.1" data-fx="fade">Style one</p><h2 data-in="0.2">Dot Art</h2><p class="lead" style="font-size:32px" data-in="0.8">A calm grid of coloured dots.</p></div>
+    <div class="win" style="left:820px;top:170px" data-in="0.3" data-fx="zoom"><div class="bar"><i></i><i></i><i></i><span>Dot Art</span></div><canvas id="c-dots" width="960" height="700"></canvas></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene" data-id="walk" data-chapter="03 · Random Walk Art">
+    <div class="left"><p class="kicker plum" data-in="0.1" data-fx="fade">Style two</p><h2 data-in="0.2">Random Walk</h2><p class="lead" style="font-size:32px" data-in="0.8">30 turtles · right-angle turns · trails of colour.</p></div>
+    <div class="win" style="left:820px;top:170px" data-in="0.3" data-fx="zoom"><div class="bar"><i></i><i></i><i></i><span>Random Walk Art</span></div><canvas id="c-walk" width="960" height="700"></canvas></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene" data-id="circles" data-chapter="04 · Circle Art">
+    <div class="left"><p class="kicker plum" data-in="0.1" data-fx="fade">Style three</p><h2 data-in="0.2">Circle Art</h2><p class="lead" style="font-size:32px" data-in="0.8">Huge overlapping arcs in thick strokes.</p></div>
+    <div class="win" style="left:820px;top:170px" data-in="0.3" data-fx="zoom"><div class="bar"><i></i><i></i><i></i><span>Circle Art</span></div><canvas id="c-circles" width="960" height="700"></canvas></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene" data-id="controls" data-chapter="05 · Controls">
+    <div class="side" data-cue="0" data-fx="left">
+      <div class="b">Valitse kuva</div>
+      <label>Taidetyyli</label><div class="sel">Random Walk Art ▾</div>
+      <label>Askeleet <span class="sv" id="sv">0</span></label><div class="slider"><u id="su"></u><i id="si"></i></div>
+      <label>Taustaväri</label><div class="sel">Valkoinen ▾</div>
+      <div class="b" style="margin-top:26px">Luo Art</div>
+      <div class="b2" data-cue="1" data-fx="pop">Pysäytä ja näytä tulos</div>
+      <div class="b2">Tallenna kuva</div>
+    </div>
+    <div class="win" style="left:740px;top:190px" data-cue="0" data-in="0.4" data-fx="zoom"><div class="bar"><i></i><i></i><i></i><span>Random Walk Art</span></div><canvas id="c-ctrl" width="1040" height="620"></canvas></div>
+    <div class="callout" style="left:900px;top:870px" data-cue="1" data-in="2" data-fx="up"><b>✓</b> saved to ~/ArtMakerStudioExports</div>
+  </section>
+
+  <!-- 7 -->
+  <section class="scene" data-id="build" data-chapter="06 · How it's built">
+    <p class="kicker plum" data-in="0.1" data-fx="fade">Under the hood</p>
+    <h2 data-cue="0">Python, packaged as a real app.</h2>
+    <div class="row" style="margin-top:60px;gap:30px">
+      <div class="card" style="flex:1" data-cue="0" data-in="0.6" data-fx="up"><div class="tag">Interface</div><h3>Tkinter</h3><p>sidebar, sliders, preview</p></div>
+      <div class="card" style="flex:1" data-cue="0" data-in="1.4" data-fx="up"><div class="tag">Drawing</div><h3>Turtle</h3><p>animated, step by step</p></div>
+      <div class="card" style="flex:1" data-cue="0" data-in="2.2" data-fx="up"><div class="tag">Palette</div><h3>Colorgram · Pillow</h3><p>colours from any photo</p></div>
+    </div>
+    <div class="chips" style="margin-top:50px">
+      <span class="chip" data-cue="1" data-fx="up"><i></i>PyInstaller</span>
+      <span class="chip" data-cue="1" data-in="1.4" data-fx="up"><i style="background:var(--peach)"></i>macOS .app</span>
+      <span class="chip" data-cue="1" data-in="2.0" data-fx="up"><i style="background:var(--plum)"></i>Windows build</span>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="scene center" data-id="outro" data-chapter="Art Maker Studio">
+    <canvas id="c-outro" width="1920" height="1080" style="position:absolute;inset:0;opacity:.22"></canvas>
+    <div style="position:relative">
+      <div class="bigtitle" style="font-size:160px" data-cue="0" data-fx="blur">Art Maker <span class="peach">Studio</span></div>
+      <p class="lead" style="margin:26px auto 0" data-cue="0" data-in="1">Code that paints.</p>
+      <p class="kicker" style="margin-top:40px;color:var(--muted)" data-cue="0" data-in="2" data-fx="fade">Built by Leo Suzuki · leosuzu.com</p>
+    </div>
+  </section>
+
+  <div class="progress"><i></i></div>
+</div>
+<script src="../engine.js"></script>
+<script>
+  // Palette taken from the sunset photo (most common colour first).
+  const PAL = ['#553B56', '#1B101C', '#A691A8', '#C8B6C1', '#D9A4A0', '#9D7093', '#6F638C', '#9A596B', '#DA9A6D', '#CB798E'];
+  const rng = (seed) => () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+  const ease = (x) => 1 - (1 - Math.min(1, Math.max(0, x))) ** 2;
+
+  // Swatches pop in one by one.
+  const sw = document.getElementById('swatches');
+  PAL.forEach((c, i) => {
+    const d = document.createElement('div');
+    d.innerHTML = `<div class="sw" style="background:${c}"></div><div class="hex">${c}</div>`;
+    d.dataset.cue = '0'; d.dataset.in = String(2.4 + i * 0.28); d.dataset.fx = 'pop';
+    sw.appendChild(d);
+  });
+
+  // Dot Art: a grid of dots, placed one after another (dot_art.py).
+  function dots(id, scene, n = 12, from = 0.5, to = 0.85) {
+    const c = document.getElementById(id), g = c.getContext('2d'), r = rng(7);
+    const gap = Math.min(c.width, c.height) / (n + 1), ox = (c.width - gap * (n - 1)) / 2, oy = (c.height - gap * (n - 1)) / 2;
+    const list = Array.from({ length: n * n }, (_, i) => ({ x: ox + (i % n) * gap, y: oy + Math.floor(i / n) * gap, col: PAL[2 + Math.floor(r() * 8)] }));
+    window.__on(scene, (t, d) => {
+      g.fillStyle = '#fbfaf7'; g.fillRect(0, 0, c.width, c.height);
+      const k = list.length * ease((t - from) / (d * to - from));
+      list.forEach((p, i) => {
+        const s = Math.min(1, Math.max(0, k - i));
+        if (s <= 0) return;
+        g.fillStyle = p.col; g.beginPath(); g.arc(p.x, p.y, gap * 0.3 * s, 0, 7); g.fill();
+      });
+    });
+  }
+
+  // Random Walk Art: 30 turtles from the centre, right-angle turns, wrap back home at the edge.
+  function walk(id, scene, steps = 170, from = 0.5, to = 0.9, width = 7, seed = 3) {
+    const c = document.getElementById(id), g = c.getContext('2d'), r = rng(seed), L = 22;
+    const turtles = Array.from({ length: 30 }, (_, i) => {
+      let x = c.width / 2, y = c.height / 2;
+      const col = PAL[i % PAL.length], seg = [];
+      for (let s = 0; s < steps; s++) {
+        const a = Math.floor(r() * 4) * Math.PI / 2, nx = x + Math.cos(a) * L, ny = y + Math.sin(a) * L;
+        if (nx < 10 || ny < 10 || nx > c.width - 10 || ny > c.height - 10) { x = c.width / 2; y = c.height / 2; seg.push(null); continue; }
+        seg.push([x, y, nx, ny]); x = nx; y = ny;
+      }
+      return { col, seg };
+    });
+    window.__on(scene, (t, d) => {
+      g.fillStyle = '#fbfaf7'; g.fillRect(0, 0, c.width, c.height);
+      const k = Math.floor(steps * ease((t - from) / (d * to - from)));
+      g.lineWidth = width; g.lineCap = 'square';
+      turtles.forEach((tu) => {
+        g.strokeStyle = tu.col; g.beginPath();
+        for (let s = 0; s < k; s++) { const q = tu.seg[s]; if (q) { g.moveTo(q[0], q[1]); g.lineTo(q[2], q[3]); } }
+        g.stroke();
+      });
+    });
+  }
+
+  // Circle Art: very large circles, so only arcs cross the canvas (circle_art.py).
+  function circles(id, scene, n = 16, from = 0.4, to = 0.9, seed = 11) {
+    const c = document.getElementById(id), g = c.getContext('2d'), r = rng(seed), W = c.width, H = c.height;
+    const list = Array.from({ length: n }, (_, i) => {
+      const R = W * (0.45 + r() * 0.4), a = r() * Math.PI * 2;
+      return { x: W / 2 + Math.cos(a) * R * 0.95, y: H / 2 + Math.sin(a) * R * 0.95, R, start: r() * Math.PI * 2, col: PAL[(i * 3) % PAL.length] };
+    });
+    window.__on(scene, (t, d) => {
+      g.fillStyle = '#fbfaf7'; g.fillRect(0, 0, W, H);
+      const k = n * ease((t - from) / (d * to - from));
+      g.lineWidth = W / 30; g.lineCap = 'butt';
+      list.forEach((p, i) => {
+        const s = Math.min(1, Math.max(0, k - i));
+        if (s <= 0) return;
+        g.strokeStyle = p.col; g.beginPath(); g.arc(p.x, p.y, p.R, p.start, p.start + Math.PI * 2 * s); g.stroke();
+      });
+    });
+  }
+
+  circles('c-intro', 'intro', 14, 1.2, 0.95, 5);
+  dots('c-dots', 'dots');
+  walk('c-walk', 'walk');
+  circles('c-circles', 'circles');
+  walk('c-ctrl', 'controls', 140, 0.6, 0.55, 6, 9);
+  circles('c-outro', 'outro', 12, 0, 0.8, 21);
+
+  // The step slider glides up while the controls scene plays.
+  const sv = document.getElementById('sv'), su = document.getElementById('su'), si = document.getElementById('si');
+  window.__on('controls', (t) => {
+    const p = ease((t - 0.8) / 2.5);
+    sv.textContent = Math.round(40 + p * 100);
+    su.style.width = 20 + p * 55 + '%'; si.style.left = `calc(${20 + p * 55}% - 13px)`;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AIOS — information video</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  .net { position: absolute; inset: 0; }
+  .logo { font: 700 260px/0.9 var(--display); letter-spacing: .14em; margin-left: .14em;
+    background: linear-gradient(180deg, #fff 10%, var(--cyan) 90%); -webkit-background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 40px #82cbd055); }
+  /* why */
+  .lonely { position: absolute; width: 360px; padding: 26px 30px; opacity: .9; }
+  .lonely .bar { display: flex; gap: 8px; margin-bottom: 18px; } .lonely .bar i { width: 12px; height: 12px; border-radius: 50%; background: #3a454b; }
+  .lonely p { font: 500 22px var(--mono); color: #6f7d85; }
+  .one { position: absolute; right: 140px; top: 300px; width: 700px; }
+  .one li { list-style: none; font-size: 34px; margin: 18px 0; display: flex; gap: 18px; align-items: center; }
+  .one li b { color: var(--green); font: 700 30px var(--mono); }
+  /* layers */
+  .layer { position: absolute; left: 700px; right: 140px; display: flex; gap: 26px; }
+  .layer .node { flex: 1; text-align: left; padding: 26px 34px; font-size: 38px; }
+  .layer .node small { font-size: 22px; }
+  .n-gui { border-color: var(--amber); } .n-gui small { color: var(--amber); }
+  .n-claude { flex: 1.6 !important; border-color: var(--cyan); background: linear-gradient(90deg, #82cbd022, var(--panel)); }
+  .n-proj { background: transparent; border-style: dashed; color: var(--muted); }
+  /* agents */
+  .agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+  .agent { padding: 44px 44px 40px; }
+  .avatar { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font: 700 52px var(--display); color: var(--bg); margin-bottom: 28px; }
+  .agent h3 { font-size: 58px; }
+  .agent .role { font: 600 24px var(--mono); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 18px; }
+  .workers { display: flex; gap: 30px; margin-top: 44px; }
+  /* memory */
+  .tree { font: 500 31px/1.55 var(--mono); }
+  .tree div { white-space: nowrap; }
+  .tree .d { color: var(--cyan); } .tree .f { color: var(--text); } .tree .c { color: var(--muted); font-size: 24px; }
+  .ball { position: absolute; right: 150px; top: 230px; width: 560px; height: 560px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 120px #82cbd033; border: 1px solid #82cbd044; }
+  .ball img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.5); }
+  /* rules */
+  .docs { display: flex; gap: 34px; }
+  .doc { padding: 30px 34px; }
+  .doc .name { font: 600 30px var(--mono); color: var(--cyan); margin-bottom: 18px; }
+  .doc .ln { height: 12px; border-radius: 6px; background: #ffffff14; margin: 14px 0; }
+  .inbox { position: absolute; right: 140px; top: 300px; width: 860px; border-color: var(--amber); }
+  .inbox .lang { font: 600 20px var(--mono); color: var(--muted); letter-spacing: .1em; margin-top: 18px; }
+  .inbox .msg { font-size: 30px; margin-top: 6px; }
+  .btns { display: flex; gap: 18px; margin-top: 34px; }
+  .btn { padding: 14px 30px; border-radius: 12px; font: 600 26px var(--mono); border: 1px solid var(--line); }
+  .btn.ok { background: var(--green); color: var(--bg); border-color: var(--green); }
+  /* scheduler */
+  .tasks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 46px; }
+  .tasks .card { padding: 28px 32px; }
+  .tasks h3 { font-size: 36px; }
+  .logs { display: flex; gap: 26px; margin-top: 34px; }
+  /* gui */
+  .gui { position: absolute; left: 140px; top: 190px; width: 1640px; height: 689px; }
+  .side { position: absolute; right: 140px; width: 380px; }
+  .chat { position: absolute; right: 100px; top: 700px; width: 620px; padding: 24px 28px; }
+  .bubble { padding: 14px 20px; border-radius: 14px; font-size: 25px; margin: 10px 0; max-width: 90%; }
+  .bubble.me { margin-left: auto; background: #82cbd02a; border: 1px solid #82cbd055; }
+  .bubble.ai { background: #ffffff0d; border: 1px solid var(--line); }
+  /* remote */
+  .handset { position: absolute; left: 260px; top: 150px; width: 400px; height: 800px; border-radius: 60px; background: linear-gradient(160deg, #1e272c, #0b0f12); border: 2px solid #34404a; box-shadow: 0 40px 120px #000c; padding: 70px 34px; display: flex; flex-direction: column; gap: 22px; }
+  .wave { display: flex; gap: 10px; align-items: center; justify-content: center; height: 120px; margin-top: auto; }
+  .wave i { width: 14px; border-radius: 7px; background: linear-gradient(var(--cyan), #7a7cf0); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="chapter"></div>
+  <div class="brand">LEO SUZUKI · <b>AIOS</b></div>
+
+  <!-- 1 -->
+  <section class="scene center" data-id="intro" data-chapter="Information video">
+    <canvas class="net" id="net1" width="1920" height="1080"></canvas>
+    <div style="position:relative">
+      <p class="kicker" data-in="0.3" data-fx="fade">Personal AI operating system</p>
+      <div class="logo" data-in="0.2" data-fx="blur" data-dur="1.4">AIOS</div>
+      <div class="chips" style="justify-content:center;margin-top:60px">
+        <span class="chip" data-cue="1" data-fx="up"><i></i>One team of models</span>
+        <span class="chip" data-cue="1" data-in="1.6" data-fx="up"><i style="background:var(--amber)"></i>Shared memory</span>
+        <span class="chip" data-cue="1" data-in="3.4" data-fx="up"><i style="background:var(--green)"></i>Asks before acting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene" data-id="why" data-chapter="01 · Why">
+    <p class="kicker amber" data-in="0.1" data-fx="fade">The problem</p>
+    <h2 data-in="0.2">Every AI tool starts from zero.</h2>
+    <div class="card lonely" style="left:150px;top:420px;transform:rotate(-4deg)" data-cue="0" data-in="1.5" data-fx="zoom"><div class="bar"><i></i><i></i><i></i></div><h3 class="muted">Chat window A</h3><p>context: empty</p></div>
+    <div class="card lonely" style="left:470px;top:520px;transform:rotate(3deg)" data-cue="0" data-in="2.1" data-fx="zoom"><div class="bar"><i></i><i></i><i></i></div><h3 class="muted">Chat window B</h3><p>rules: its own</p></div>
+    <div class="card lonely" style="left:250px;top:700px;transform:rotate(-1deg)" data-cue="0" data-in="2.7" data-fx="zoom"><div class="bar"><i></i><i></i><i></i></div><h3 class="muted">Chat window C</h3><p>memory: none</p></div>
+    <div class="arrow" style="position:absolute;left:910px;top:590px;font-size:70px" data-cue="1" data-fx="left">→</div>
+    <div class="card one" data-cue="1" data-in="0.3" data-fx="right">
+      <div class="tag">AIOS</div>
+      <h3>One system</h3>
+      <ul style="padding:0;margin:10px 0 0">
+        <li data-cue="1" data-in="1.4" data-fx="left"><b>✓</b> Shared context</li>
+        <li data-cue="1" data-in="2.6" data-fx="left"><b>✓</b> The same rules for every model</li>
+        <li data-cue="1" data-in="3.8" data-fx="left"><b>✓</b> Under my control</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene" data-id="layers" data-chapter="02 · System">
+    <p class="kicker" data-fx="fade" data-in="0.1">Architecture</p>
+    <h2 data-cue="0" style="max-width:520px">Built in layers.</h2>
+    <p class="lead" data-cue="0" data-in="0.8" style="max-width:500px;font-size:34px">Each layer has one job, and work flows down to the cheapest model that can do it well.</p>
+    <svg class="lines"><path d="M1240 300 V 330" data-cue="2" data-fx="draw" data-dur="0.5"/><path d="M1240 510 V 560" data-cue="3" data-fx="draw" data-dur="0.5"/><path d="M1240 735 V 790" data-cue="3" data-in="2" data-fx="draw" data-dur="0.5"/></svg>
+    <div class="layer" style="top:170px" data-cue="1" data-fx="down"><div class="node n-gui">Control panel<small>Electron desktop app · chat · inbox · charts</small></div></div>
+    <div class="layer" style="top:340px">
+      <div class="node n-claude" data-cue="2" data-fx="zoom">ClaudeOS<small>Claude Code · owns AIOS, git and the scheduler</small></div>
+      <div class="node" data-cue="2" data-in="3.2" data-fx="right">Codex<small>expert partner · reviews</small></div>
+    </div>
+    <div class="layer" style="top:570px">
+      <div class="node" data-cue="3" data-in="0.6" data-fx="up">Groq<small>cloud workers · ~1 s answers</small></div>
+      <div class="node" data-cue="3" data-in="1.6" data-fx="up">Ollama<small>local models · private · free</small></div>
+    </div>
+    <div class="layer" style="top:800px" data-cue="3" data-in="2.3" data-fx="up"><div class="node n-proj">Projects · websites · apps · research</div></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene" data-id="agents" data-chapter="03 · Agents">
+    <p class="kicker" data-fx="fade" data-in="0.1">Inside ClaudeOS</p>
+    <h2 data-cue="0">Named agents. Clear roles.</h2>
+    <div class="agents">
+      <div class="card agent" data-cue="1" data-fx="up"><div class="avatar" style="background:var(--amber)">M</div><h3>MoMo</h3><div class="role amber">Coordinator</div><p>Plans the work and hands it to the right agent.</p></div>
+      <div class="card agent" data-cue="2" data-fx="up"><div class="avatar" style="background:var(--cyan)">C</div><h3>CoCo</h3><div class="role cyan">Builder</div><p>Writes code and runs engineering loops until the tests pass.</p></div>
+      <div class="card agent" data-cue="3" data-fx="up"><div class="avatar" style="background:var(--rose)">F</div><h3>FiFi</h3><div class="role rose">Researcher</div><p>Finds, compares and summarises information.</p></div>
+    </div>
+    <div class="workers">
+      <span class="chip" data-cue="4" data-fx="up"><i style="color:#e58fd0;background:#e58fd0"></i>Research agent · Groq + live web search</span>
+      <span class="chip" data-cue="4" data-in="2.6" data-fx="up"><i style="color:#a79cf5;background:#a79cf5"></i>Ollama workers · private &amp; bulk, no cost</span>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene" data-id="memory" data-chapter="04 · Memory">
+    <p class="kicker" data-fx="fade" data-in="0.1">Shared memory</p>
+    <h2 data-cue="0">The Second Brain.</h2>
+    <div class="tree" style="margin-top:20px">
+      <div class="d" data-cue="0" data-in="1.2" data-fx="left">_SecondBrain/</div>
+      <div class="f" data-cue="0" data-in="2.2" data-fx="left">├─ CONTRACT.md  <span class="c">rules every agent reads first</span></div>
+      <div class="d" data-cue="1" data-fx="left">├─ hot/  <span class="c">current task · message bus · decisions</span></div>
+      <div class="d" data-cue="2" data-fx="left">├─ projects/&lt;name&gt;/  <span class="c">MEMORY · CURRENT · HANDOFFS</span></div>
+      <div class="d" data-cue="2" data-in="2.8" data-fx="left">└─ cold/  <span class="c">archived knowledge</span></div>
+    </div>
+    <div class="chips" style="margin-top:40px">
+      <span class="chip" data-cue="0" data-in="3" data-fx="up"><i></i>plain Markdown files</span>
+      <span class="chip" data-cue="3" data-fx="up"><i style="background:var(--amber);color:var(--amber)"></i>versioned in git</span>
+    </div>
+    <div class="glow" style="right:250px;top:330px;width:400px;height:400px;background:var(--cyan)"></div>
+    <div class="ball" data-cue="0" data-in="0.5" data-fx="zoom" data-dur="1.4"><img src="media/gui_brain.png" alt="" data-kb="in"></div>
+    <div class="callout" style="right:250px;top:830px" data-cue="0" data-in="2" data-fx="up"><b>●</b> memory ball in the control panel</div>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene" data-id="rules" data-chapter="05 · Rules">
+    <p class="kicker amber" data-fx="fade" data-in="0.1">Safety</p>
+    <h2 data-cue="0">Rules come first.</h2>
+    <div class="docs" style="margin-top:50px;flex-direction:column;width:640px">
+      <div class="card doc" data-cue="1" data-fx="up"><div class="name">CONTRACT.md</div><p>How agents work together</p><div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:60%"></div></div>
+      <div class="card doc" data-cue="1" data-in="1.4" data-fx="up"><div class="name rose">PROHIBITED.md</div><p>What no agent may do</p><div class="ln"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:85%"></div></div>
+    </div>
+    <div class="card inbox" data-cue="2" data-fx="right">
+      <div class="tag">Approval inbox · 1 waiting</div>
+      <h3>Merge the GUI fix into main?</h3>
+      <div class="lang" data-cue="2" data-in="4.5" data-fx="fade">EN</div><div class="msg" data-cue="2" data-in="4.5" data-fx="fade">Branch is tested. Two files changed. Push stays with Leo.</div>
+      <div class="lang" data-cue="2" data-in="5.5" data-fx="fade">FI</div><div class="msg muted" data-cue="2" data-in="5.5" data-fx="fade">Haara on testattu. Kaksi tiedostoa muuttui.</div>
+      <div class="btns" data-cue="2" data-in="7" data-fx="up"><span class="btn ok" id="approve">Approve</span><span class="btn">Reject</span></div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="scene" data-id="scheduler" data-chapter="06 · Scheduler">
+    <p class="kicker" data-fx="fade" data-in="0.1">Automation</p>
+    <h2 data-cue="0">Tasks that run on their own.</h2>
+    <div class="shot" style="width:1640px;height:302px" data-cue="0" data-in="0.6" data-fx="zoom"><img src="media/gui_nodered.png" alt="" data-kb="in"></div>
+    <div class="tasks">
+      <div class="card" data-cue="1" data-fx="up"><div class="tag">Nightly</div><h3>Maintenance</h3><p>Checks the system and proposes fixes</p></div>
+      <div class="card" data-cue="1" data-in="1.5" data-fx="up"><div class="tag">Daily</div><h3>Memory organiser</h3><p>Keeps the Second Brain tidy</p></div>
+      <div class="card" data-cue="1" data-in="3.3" data-fx="up"><div class="tag">Scheduled</div><h3>Research loops</h3><p>Search, rank and report</p></div>
+    </div>
+    <div class="logs">
+      <span class="chip" data-cue="2" data-fx="up"><i style="background:var(--green);color:var(--green)"></i>Completed → run log</span>
+      <span class="chip" data-cue="2" data-in="1.6" data-fx="up"><i style="background:var(--rose);color:var(--rose)"></i>Failed → alert</span>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="scene" data-id="gui" data-chapter="07 · Control panel">
+    <p class="kicker" data-fx="fade" data-in="0.1" style="position:absolute;top:120px">The control panel · Electron</p>
+    <div class="gui shot" data-cue="0" data-fx="zoom" data-dur="1.2"><img src="media/gui_top.png" alt="" data-kb="in"></div>
+    <div class="callout" style="left:1010px;top:560px" data-cue="1" data-fx="pop"><b>●</b> Second Brain graph</div>
+    <div class="callout" style="left:150px;top:745px" data-cue="2" data-fx="pop"><b>●</b> Usage per provider</div>
+    <div class="callout" style="left:900px;top:300px" data-cue="3" data-in="2.5" data-fx="pop"><b>●</b> Inbox · Node-RED · tasks</div>
+    <div class="card chat" data-cue="3" data-fx="up">
+      <div class="tag">Chat · any agent</div>
+      <div class="bubble me" data-cue="3" data-in="0.8" data-fx="fade">Run the memory organiser now.</div>
+      <div class="bubble ai" data-cue="3" data-in="2.2" data-fx="fade">Started ✓ Anything risky goes to the inbox.</div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="scene" data-id="remote" data-chapter="08 · Remote">
+    <div class="handset" data-in="0.1" data-fx="up" data-dur="1">
+      <div class="bubble me" data-in="1" data-fx="fade" style="font-size:24px">“Hey Siri, AIOS — status.”</div>
+      <div class="bubble ai" data-in="3.2" data-fx="fade" style="font-size:24px">Three tasks ran tonight. One inbox item is waiting.</div>
+      <div class="wave" id="wave"></div>
+    </div>
+    <div style="position:absolute;left:820px;top:330px;width:900px">
+      <p class="kicker" data-in="0.3" data-fx="fade">AIOS Remote</p>
+      <h2 data-in="0.4">Ask by voice, from anywhere.</h2>
+      <div class="chips" style="margin-top:30px">
+        <span class="chip" data-in="2.2" data-fx="up"><i></i>status</span>
+        <span class="chip" data-in="2.8" data-fx="up"><i style="background:var(--amber)"></i>inbox</span>
+        <span class="chip" data-in="3.4" data-fx="up"><i style="background:var(--green)"></i>note …</span>
+        <span class="chip" data-in="4.0" data-fx="up"><i style="background:var(--rose)"></i>read-only answers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="scene center" data-id="outro" data-chapter="AIOS">
+    <canvas class="net" id="net2" width="1920" height="1080"></canvas>
+    <div style="position:relative">
+      <div style="display:flex;gap:60px;justify-content:center;font:700 64px var(--display)">
+        <span data-cue="0" data-fx="up">One team.</span>
+        <span class="amber" data-cue="0" data-in="1.3" data-fx="up">One memory.</span>
+        <span class="cyan" data-cue="0" data-in="2.6" data-fx="up">Clear rules.</span>
+      </div>
+      <div class="logo" style="font-size:200px;margin-top:40px" data-cue="1" data-fx="blur" data-dur="1.2">AIOS</div>
+      <p class="kicker" style="margin-top:40px;color:var(--muted)" data-cue="1" data-in="0.8" data-fx="fade">Built by Leo Suzuki · leosuzu.com</p>
+    </div>
+  </section>
+
+  <div class="progress"><i></i></div>
+</div>
+<script src="../engine.js"></script>
+<script>
+  // Drifting constellation of agents and memory notes around a core (intro and outro).
+  function net(canvasId, sceneId) {
+    const c = document.getElementById(canvasId), g = c.getContext('2d');
+    const cols = ['#82cbd0', '#e5b879', '#e59aa8', '#9fd39a', '#a79cf5'];
+    const pts = Array.from({ length: 90 }, (_, i) => {
+      const r = 260 + ((i * 97) % 420), a = i * 2.399, sp = 0.02 + ((i * 13) % 7) / 220;
+      return { r, a, sp, s: 2 + (i % 4), col: cols[i % cols.length] };
+    });
+    window.__on(sceneId, (t) => {
+      g.clearRect(0, 0, 1920, 1080);
+      const xy = pts.map((p) => {
+        const a = p.a + t * p.sp, k = Math.min(1, Math.max(0, (t - 0.2) * 0.6));
+        return [960 + Math.cos(a) * p.r * (0.5 + 0.5 * k), 540 + Math.sin(a) * p.r * 0.55 * (0.5 + 0.5 * k)];
+      });
+      g.lineWidth = 1;
+      for (let i = 0; i < xy.length; i++) for (let j = i + 1; j < xy.length; j++) {
+        const dx = xy[i][0] - xy[j][0], dy = xy[i][1] - xy[j][1], d = Math.hypot(dx, dy);
+        if (d < 130) { g.strokeStyle = `rgba(130,203,208,${0.16 * (1 - d / 130)})`; g.beginPath(); g.moveTo(...xy[i]); g.lineTo(...xy[j]); g.stroke(); }
+      }
+      xy.forEach(([x, y], i) => { g.globalAlpha = 0.55; g.fillStyle = pts[i].col; g.beginPath(); g.arc(x, y, pts[i].s, 0, 7); g.fill(); });
+      g.globalAlpha = 1;
+    });
+  }
+  net('net1', 'intro'); net('net2', 'outro');
+
+  // Voice waveform on the phone.
+  const wave = document.getElementById('wave');
+  const bars = Array.from({ length: 16 }, () => wave.appendChild(document.createElement('i')));
+  window.__on('remote', (t) => bars.forEach((b, i) => {
+    const on = t > 0.8 && t < 3 ? 1 : 0.15;
+    b.style.height = 12 + on * 90 * Math.abs(Math.sin(t * 7 + i * 0.7) * Math.cos(t * 3.1 + i)) + 'px';
+  }));
+
+  // Approve button pulses once the proposal is complete.
+  const ok = document.getElementById('approve');
+  window.__on('rules', (t, d, cues) => {
+    const p = t - (cues[2] + 8);
+    ok.style.boxShadow = p > 0 ? `0 0 0 ${8 * Math.abs(Math.sin(p * 3))}px #9fd39a44` : 'none';
+  });
+</script>
+</body>
+</html>

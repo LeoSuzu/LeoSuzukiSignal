@@ -1,0 +1,59 @@
+{
+  "title": "AIOS — information video",
+  "out": "assets/project_samples/AIOS/AIOS_intro",
+  "voice": "Daniel",
+  "rate": 185,
+  "poster": 3.2,
+  "scenes": [
+    { "id": "intro", "say": [
+      "This is AIOS: my personal AI operating system.",
+      "It turns several AI models into one team that works on my projects, remembers what it has learned, and asks before it does anything important."
+    ] },
+    { "id": "why", "say": [
+      "Most AI tools start every conversation from zero, in their own window, with their own rules.",
+      "I wanted one system where the models share context, follow the same rules, and stay under my control."
+    ] },
+    { "id": "layers", "say": [
+      "AIOS is built in layers.",
+      "At the top is a desktop control panel.",
+      "Under it runs ClaudeOS, powered by Claude Code, which owns the system. Codex joins as an expert partner for reviews and second opinions.",
+      "Routine work goes to fast workers: Groq in the cloud, and Ollama models running locally on my Mac."
+    ] },
+    { "id": "agents", "say": [
+      "Inside ClaudeOS, named agents have clear roles.",
+      "MoMo coordinates the work.",
+      "CoCo builds, and runs engineering loops.",
+      "FiFi does the research.",
+      "A Groq research agent searches the web, and local Ollama models handle private or bulk tasks at no cost."
+    ] },
+    { "id": "memory", "say": [
+      "Memory lives in the Second Brain: a shared folder of plain files that every agent reads before it starts.",
+      "Hot memory holds current tasks, messages and decisions.",
+      "Each project keeps its own memory and handoff notes, and older knowledge moves to cold storage.",
+      "It is all versioned in git, so every change can be traced."
+    ] },
+    { "id": "rules", "say": [
+      "Rules come first.",
+      "A shared contract and a list of prohibited actions apply to every agent.",
+      "Anything risky, like merging code, pushing to git or deleting files, becomes a proposal in the approval inbox, in English and Finnish, and waits for my decision."
+    ] },
+    { "id": "scheduler", "say": [
+      "A scheduler built on Node-RED runs tasks on its own.",
+      "Nightly maintenance, a memory organiser that keeps the Second Brain tidy, and research loops.",
+      "Every run writes a log, and failures show up as alerts."
+    ] },
+    { "id": "gui", "say": [
+      "The control panel is an Electron desktop app.",
+      "A live graph shows the Second Brain and how it connects.",
+      "Charts track usage for each provider,",
+      "and from one chat box I can talk to any agent, run a task, or approve an inbox item."
+    ] },
+    { "id": "remote", "say": [
+      "Away from the desk, AIOS Remote lets me ask for status or file a note by voice, from my iPhone."
+    ] },
+    { "id": "outro", "say": [
+      "One team of models. One shared memory. Clear rules.",
+      "That's AIOS."
+    ], "tail": 1.6 }
+  ]
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WePic for Android — introduction</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  :root { --sage: #8fb5a3; --sun: #f0c06b; --cream: #f4ecd8; }
+  .bg { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(22px) brightness(.38) saturate(1.1); }
+  .icon { width: 190px; height: 190px; border-radius: 44px; box-shadow: 0 30px 80px #000a; }
+  .word { font: 700 170px/1 var(--display); letter-spacing: -.03em; color: var(--cream); }
+  .sage { color: var(--sage); } .sun { color: var(--sun); }
+  .chip.sage i { background: var(--sage); color: var(--sage); } .chip.sun i { background: var(--sun); color: var(--sun); }
+  .phones { display: flex; gap: 70px; justify-content: center; margin-top: 30px; }
+  .phones figure { margin: 0; width: 380px; text-align: center; }
+  .phones figcaption { margin-top: 26px; font: 700 40px var(--display); }
+  .phones figcaption small { display: block; font: 500 22px var(--mono); color: var(--muted); letter-spacing: .06em; }
+  .tablet { position: absolute; border-radius: 34px; padding: 18px; background: #050708; border: 2px solid #2b3338; box-shadow: 0 50px 120px #000d; }
+  .tablet img { display: block; width: 100%; border-radius: 18px; }
+  .eq { display: flex; align-items: center; gap: 28px; margin-top: 50px; }
+  .eq .node { padding: 26px 34px; font-size: 36px; }
+  .eq .op { font: 600 54px var(--mono); color: var(--sage); }
+  .query { font: 600 30px var(--mono); color: var(--sun); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="chapter"></div>
+  <div class="brand">LEO SUZUKI · <b>WEPIC</b></div>
+
+  <!-- 1 -->
+  <section class="scene" data-id="intro" data-chapter="Android app">
+    <div class="bg" style="background-image:url(media/random_portrait.jpg)" data-kb="in"></div>
+    <div style="position:absolute;left:140px;top:250px;width:900px">
+      <img class="icon" src="media/logo.png" alt="" data-in="0.2" data-fx="pop">
+      <div class="word" style="margin-top:40px" data-in="0.5" data-fx="blur" data-dur="1.2">WePic</div>
+      <p class="lead" style="color:#d6dcd8;font-size:42px;margin-top:20px" data-in="1.2">Weather + a picture of the place.</p>
+      <div class="chips" style="margin-top:40px">
+        <span class="chip" data-cue="1" data-fx="up" style="text-decoration:line-through;color:var(--muted)">☁ an icon of a cloud</span>
+        <span class="chip sun" data-cue="1" data-in="1" data-fx="pop"><i></i>the real view</span>
+      </div>
+    </div>
+    <div class="phone" style="position:absolute;right:220px;top:110px;width:480px" data-in="0.6" data-fx="up" data-dur="1.2"><img src="media/random_portrait.jpg" alt=""></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene" data-id="idea" data-chapter="01 · The idea">
+    <p class="kicker" style="color:var(--sage)" data-in="0.1" data-fx="fade">How the photo is chosen</p>
+    <h2 data-cue="0" style="max-width:1000px">Place + weather = picture.</h2>
+    <div class="eq">
+      <div class="node" data-cue="0" data-in="0.8" data-fx="up">📍 Bali<small>location</small></div>
+      <div class="op" data-cue="0" data-in="1.4" data-fx="fade">+</div>
+      <div class="node" data-cue="0" data-in="1.8" data-fx="up">☁ Clouds<small>current weather</small></div>
+      <div class="op" data-cue="0" data-in="2.6" data-fx="fade">→</div>
+    </div>
+    <div class="card" style="width:820px;margin-top:40px" data-cue="0" data-in="3" data-fx="up">
+      <div class="tag">Unsplash search</div>
+      <div class="query">"Bali clouds"</div>
+      <p style="margin-top:14px" data-cue="1" data-fx="fade">no matching photo → <span class="sage">"Bali"</span> — the city on its own</p>
+    </div>
+    <div class="phone" style="position:absolute;right:220px;top:150px;width:430px" data-cue="0" data-in="3.6" data-fx="zoom" data-dur="1.1"><img src="media/random_portrait.jpg" alt=""></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene" data-id="modes" data-chapter="02 · Three ways">
+    <h2 data-cue="0" style="text-align:center">Three ways to look at the world.</h2>
+    <div class="phones">
+      <figure data-cue="1" data-fx="up"><div class="phone"><img src="media/current_portrait.jpg" alt=""></div><figcaption>Current location<small>📍 GPS · Tampere</small></figcaption></figure>
+      <figure data-cue="2" data-fx="up"><div class="phone"><img src="media/search_portrait_sf.jpg" alt=""></div><figcaption>Search a city<small>🔍 San Francisco</small></figcaption></figure>
+      <figure data-cue="3" data-fx="up"><div class="phone"><img src="media/random_portrait.jpg" alt=""></div><figcaption>Random city<small>🎲 Bali</small></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene" data-id="forecast" data-chapter="03 · At a glance">
+    <div class="phone" style="position:absolute;left:600px;top:110px;width:460px" data-cue="0" data-fx="zoom"><img src="media/search_portrait_sf.jpg" alt=""></div>
+    <div style="position:absolute;left:140px;top:300px;width:420px">
+      <p class="kicker" style="color:var(--sage)" data-in="0.1" data-fx="fade">Every view</p>
+      <h2 style="font-size:80px" data-in="0.2">All you need, at a glance.</h2>
+    </div>
+    <div class="callout" style="left:1080px;top:412px" data-cue="0" data-in="0.6" data-fx="right"><b>←</b> live weather · OpenWeather</div>
+    <div class="callout" style="left:1080px;top:600px;border-color:var(--sun)" data-cue="1" data-fx="right"><b class="sun">←</b> 24-hour forecast · swipe</div>
+    <div class="callout" style="left:1080px;top:340px;border-color:var(--sage)" data-cue="2" data-fx="right"><b class="sage">←</b> local time at that place</div>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene" data-id="landscape" data-chapter="04 · Sideways">
+    <div class="tablet" style="left:260px;top:120px;width:1400px" data-cue="0" data-fx="zoom" data-dur="1.1">
+      <div style="position:relative;overflow:hidden;border-radius:18px">
+        <img src="media/search_landscape_sf.jpg" alt="" data-kb="in">
+        <img src="media/random_landscape.jpg" alt="" style="position:absolute;inset:0" data-cue="1" data-in="0.6" data-fx="fade" data-dur="1.4">
+      </div>
+    </div>
+    <div class="callout" style="left:300px;top:930px;border-color:var(--sun)" data-cue="0" data-in="2" data-fx="up"><b class="sun">▬</b> weather in a slim strip</div>
+    <div class="callout" style="left:1160px;top:930px;border-color:var(--sage)" data-cue="1" data-fx="up"><b class="sage">▣</b> a window onto another city</div>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene" data-id="build" data-chapter="05 · How it's built">
+    <p class="kicker" style="color:var(--sage)" data-in="0.1" data-fx="fade">Under the hood</p>
+    <h2 data-cue="0">Kotlin · Jetpack Compose · Retrofit</h2>
+    <div class="eq" style="margin-top:70px">
+      <div class="node" data-cue="1" data-fx="up">📱 WePic<small>no API keys on the phone</small></div>
+      <div class="op" data-cue="1" data-in="0.8" data-fx="fade">→</div>
+      <div class="node" style="border-color:var(--sun)" data-cue="1" data-in="1.2" data-fx="up">Cloudflare Worker<small>adds keys · caches at the edge</small></div>
+      <div class="op" data-cue="1" data-in="2" data-fx="fade">→</div>
+      <div class="col" style="gap:16px">
+        <div class="node" data-cue="1" data-in="2.4" data-fx="left">OpenWeather</div>
+        <div class="node" data-cue="1" data-in="2.8" data-fx="left">Unsplash</div>
+      </div>
+    </div>
+    <div class="chips" style="margin-top:40px">
+      <span class="chip" data-cue="1" data-in="5" data-fx="up"><i></i>weather 10 min</span>
+      <span class="chip" data-cue="1" data-in="5.5" data-fx="up"><i></i>forecast 30 min</span>
+      <span class="chip" data-cue="1" data-in="6" data-fx="up"><i></i>photos 1 h</span>
+    </div>
+    <div class="chips" style="margin-top:22px">
+      <span class="chip sage" data-cue="2" data-fx="up"><i></i>Flutter port · cross-platform</span>
+      <span class="chip sun" data-cue="2" data-in="1.8" data-fx="up"><i></i>Google Play · launch prep</span>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="scene center" data-id="outro" data-chapter="WePic">
+    <div class="bg" style="background-image:url(media/search_portrait_sf.jpg)" data-kb="out"></div>
+    <div style="position:relative">
+      <img class="icon" src="media/logo.png" alt="" style="margin:0 auto" data-cue="0" data-fx="pop">
+      <div class="word" style="margin-top:36px" data-cue="0" data-in="0.3" data-fx="blur">WePic</div>
+      <p class="lead" style="color:#d6dcd8;margin:20px auto 0" data-cue="0" data-in="0.9">See the weather the way it looks.</p>
+      <p class="kicker" style="margin-top:40px;color:var(--muted)" data-cue="0" data-in="2" data-fx="fade">Built by Leo Suzuki · leosuzu.com</p>
+    </div>
+  </section>
+
+  <div class="progress"><i></i></div>
+</div>
+<script src="../engine.js"></script>
+</body>
+</html>

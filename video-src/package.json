@@ -1,0 +1,7 @@
+{
+  "name": "leosuzu-intro-videos",
+  "private": true,
+  "type": "module",
+  "description": "Narrated intro videos for leosuzu.com. Run: node build.mjs <aios|marjo|wepic|artmaker>",
+  "devDependencies": { "puppeteer-core": "23.11.1" }
+}

@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:03.214
+Art Maker Studio is a desktop app,
+
+00:00:03.214 --> 00:00:04.386
+written in Python,
+
+00:00:04.386 --> 00:00:07.056
+that turns any photo into generative art.
+
+00:00:07.356 --> 00:00:10.978
+Pick a picture, choose a style, and watch it being painted.
+
+00:00:12.428 --> 00:00:16.327
+First, the app reads the photo's colour palette with Colorgram.
+
+00:00:16.627 --> 00:00:18.412
+Those colours become the paint.
+
+00:00:19.862 --> 00:00:23.151
+Dot Art lays the palette out as a calm grid of coloured dots.
+
+00:00:26.862 --> 00:00:30.801
+Random Walk Art sends thirty turtles wandering across the canvas,
+
+00:00:31.101 --> 00:00:35.383
+each one turning at right angles, and leaving a trail of colour behind it.
+
+00:00:36.833 --> 00:00:40.782
+Circle Art sweeps huge, overlapping arcs in thick strokes,
+
+00:00:41.082 --> 00:00:43.393
+so every image gets a different rhythm.
+
+00:00:44.843 --> 00:00:49.730
+Sliders set the number of dots, steps or circles, and the background colour.
+
+00:00:50.030 --> 00:00:54.746
+Drawing can be stopped at any time, and the finished work is saved automatically.
+
+00:00:56.196 --> 00:00:59.544
+It is built with Tkinter for the interface and Turtle for the drawing,
+
+00:00:59.844 --> 00:01:04.166
+and PyInstaller packages it as a real app for both macOS and Windows.
+
+00:01:05.616 --> 00:01:06.981
+Art Maker Studio.
+
+00:01:06.981 --> 00:01:08.346
+Code that paints.
