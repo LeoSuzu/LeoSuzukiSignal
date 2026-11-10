@@ -1,0 +1,40 @@
+{
+  "title": "WePicHTML — introduction",
+  "out": "assets/project_samples/WePicApp/WePicHTML_intro",
+  "voice": "Daniel",
+  "rate": 185,
+  "poster": 3.0,
+  "scenes": [
+    { "id": "intro", "say": [
+      { "text": "WePicHTML is the web version of WePic: live weather for any city, over a full-screen photo of the place.",
+        "speak": "We-Pic HTML is the web version of We-Pic: live weather for any city, over a full-screen photo of the place." },
+      { "text": "It runs in any browser, at wepic.vercel.app.", "speak": "It runs in any browser, at we-pic dot vercel dot app." }
+    ] },
+    { "id": "cities", "say": [
+      "Every visit opens on a random city, picked from forty-five places around the world.",
+      "Kyoto,",
+      "Reykjavik,",
+      "New York.",
+      "Or search for any city you like."
+    ] },
+    { "id": "card", "say": [
+      "A glass card shows the conditions:",
+      "temperature, wind, rain, humidity, sunrise and sunset, and the local time there,",
+      "plus the next fifteen hours, in three-hour steps."
+    ] },
+    { "id": "match", "say": [
+      "The photo follows the weather.",
+      "OpenWeather conditions are reduced to six simple keywords, like rain, snow or clear.",
+      "Unsplash is searched for the city with that keyword, and then for the city alone.",
+      "Every photo is checked to load before it is shown."
+    ] },
+    { "id": "build", "say": [
+      "It is built with plain JavaScript modules and no framework.",
+      "Small Vercel functions call OpenWeather and Unsplash, so the API keys never reach the browser.",
+      "This web app was the first version of the idea, later rebuilt as a native Android app."
+    ] },
+    { "id": "outro", "say": [
+      { "text": "WePicHTML. Live weather, real places.", "speak": "We-Pic HTML. Live weather, real places." }
+    ], "tail": 1.6 }
+  ]
+}

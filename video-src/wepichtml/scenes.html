@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WePicHTML — introduction</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  :root { --sky: #8fd3f4; --sun: #f0c06b; }
+  .sky { color: var(--sky); } .sun { color: var(--sun); }
+  .chip.sky i { background: var(--sky); color: var(--sky); } .chip.sun i { background: var(--sun); color: var(--sun); }
+  .bg { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(24px) brightness(.32) saturate(1.1); }
+  .word { font: 700 150px/0.95 var(--display); letter-spacing: -.03em; }
+  .word span { color: var(--sky); }
+  .frame { position: absolute; }
+  .frame .layer { position: absolute; inset: 0; }
+  .frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .citytag { position: absolute; left: 30px; bottom: 26px; padding: 10px 20px; border-radius: 10px; background: #0b1013d9; font: 600 26px var(--mono); }
+  .glass { position: absolute; left: 560px; top: 130px; width: 442px; border-radius: 26px; overflow: hidden; box-shadow: 0 40px 120px #000c; }
+  .glass img { display: block; width: 100%; }
+  .kw { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 30px; }
+  .kw span { padding: 12px 22px; border-radius: 12px; background: #ffffff0d; border: 1px solid var(--line); font: 600 26px var(--mono); }
+  .q { font: 600 30px var(--mono); color: var(--sun); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="chapter"></div>
+  <div class="brand">LEO SUZUKI · <b>WEPICHTML</b></div>
+
+  <!-- 1 -->
+  <section class="scene" data-id="intro" data-chapter="Web app">
+    <div class="bg" style="background-image:url(media/cape_town.jpg)" data-kb="in"></div>
+    <div style="position:absolute;left:140px;top:300px;width:660px">
+      <p class="kicker sky" data-in="0.3" data-fx="fade">Weather + picture · web</p>
+      <div class="word" data-in="0.4" data-fx="blur" data-dur="1.3">WePic<span>HTML</span></div>
+      <p class="lead" style="font-size:36px;color:#d6dcd8" data-in="1.3">Live weather over a photo of the place.</p>
+      <span class="chip sky" style="margin-top:36px" data-cue="1" data-fx="up"><i></i>wepic.vercel.app</span>
+    </div>
+    <div class="browser" style="position:absolute;right:110px;top:240px;width:940px" data-in="0.6" data-fx="right" data-dur="1.2">
+      <div class="bar"><i></i><i></i><i></i><span>wepic.vercel.app</span></div>
+      <div style="overflow:hidden"><img src="media/cape_town.jpg" alt="" data-kb="in"></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene" data-id="cities" data-chapter="01 · Cities">
+    <div class="browser frame" style="left:140px;top:160px;width:1240px;height:820px" data-cue="0" data-fx="zoom">
+      <div class="bar"><i></i><i></i><i></i><span>wepic.vercel.app</span></div>
+      <div style="position:relative;height:776px;overflow:hidden">
+        <div class="layer"><img src="media/seoul.jpg" alt=""><span class="citytag">🎲 Seoul</span></div>
+        <div class="layer" data-cue="1" data-fx="fade" data-dur="0.9"><img src="media/kyoto.jpg" alt=""><span class="citytag">Kyoto</span></div>
+        <div class="layer" data-cue="2" data-fx="fade" data-dur="0.9"><img src="media/reykjavik.jpg" alt=""><span class="citytag">Reykjavik</span></div>
+        <div class="layer" data-cue="3" data-fx="fade" data-dur="0.9"><img src="media/new_york.jpg" alt=""><span class="citytag">New York</span></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:1440px;top:300px;width:340px">
+      <p class="kicker sky" data-in="0.2" data-fx="fade">Every visit</p>
+      <h2 style="font-size:76px" data-in="0.3">A new city.</h2>
+      <div class="col" style="gap:16px;margin-top:20px">
+        <span class="chip sun" data-cue="0" data-in="2" data-fx="up"><i></i>45 cities</span>
+        <span class="chip sky" data-cue="4" data-fx="up"><i></i>🔍 any city</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene" data-id="card" data-chapter="02 · At a glance">
+    <div class="bg" style="background-image:url(media/cape_town.jpg)"></div>
+    <div style="position:absolute;left:140px;top:330px;width:380px">
+      <p class="kicker sky" data-in="0.1" data-fx="fade">The glass card</p>
+      <h2 style="font-size:78px" data-cue="0">Everything at a glance.</h2>
+    </div>
+    <div class="glass" data-cue="0" data-in="0.3" data-fx="zoom" data-dur="1"><img src="media/card.jpg" alt=""></div>
+    <div class="callout" style="left:1060px;top:320px" data-cue="1" data-fx="right"><b>←</b> temperature · feels like</div>
+    <div class="callout" style="left:1060px;top:450px" data-cue="1" data-in="1.4" data-fx="right"><b>←</b> wind · rain · humidity · pressure</div>
+    <div class="callout" style="left:1060px;top:580px;border-color:var(--sun)" data-cue="1" data-in="3" data-fx="right"><b class="sun">←</b> sunrise / sunset · local time</div>
+    <div class="callout" style="left:1060px;top:710px;border-color:var(--sky)" data-cue="2" data-fx="right"><b class="sky">←</b> next 15 hours · 3-hour steps</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene" data-id="match" data-chapter="03 · Photo matching">
+    <p class="kicker sky" data-in="0.1" data-fx="fade">How the photo is chosen</p>
+    <h2 data-cue="0">The photo follows the weather.</h2>
+    <div style="position:absolute;left:140px;top:340px;width:820px">
+      <p class="muted" style="margin:0" data-cue="1" data-fx="fade">OpenWeather condition → keyword</p>
+      <div class="kw">
+        <span data-cue="1" data-in="1.2" data-fx="pop">storm</span><span data-cue="1" data-in="1.5" data-fx="pop">rain</span>
+        <span data-cue="1" data-in="1.8" data-fx="pop">snow</span><span data-cue="1" data-in="2.1" data-fx="pop">fog</span>
+        <span data-cue="1" data-in="2.4" data-fx="pop">clear</span><span class="sky" style="border-color:var(--sky)" data-cue="1" data-in="2.7" data-fx="pop">clouds</span>
+      </div>
+      <div class="card" style="margin-top:40px" data-cue="2" data-fx="up">
+        <div class="tag">Unsplash search</div>
+        <div class="q">1. "Reykjavik clouds"</div>
+        <div class="q" style="color:var(--muted);margin-top:8px" data-cue="2" data-in="2.6" data-fx="fade">2. "Reykjavik"</div>
+      </div>
+      <span class="chip sky" style="margin-top:30px" data-cue="3" data-fx="up"><i></i>✓ photo checked before it is shown</span>
+    </div>
+    <div class="browser" style="position:absolute;right:140px;top:330px;width:760px" data-cue="2" data-in="0.6" data-fx="zoom" data-dur="1.1">
+      <div class="bar"><i></i><i></i><i></i><span>wepic.vercel.app</span></div>
+      <div style="overflow:hidden"><img src="media/reykjavik.jpg" alt="" data-kb="in"></div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene" data-id="build" data-chapter="04 · How it's built">
+    <p class="kicker sky" data-in="0.1" data-fx="fade">Under the hood</p>
+    <h2 data-cue="0">Plain JavaScript. Keys on the server.</h2>
+    <div class="row" style="margin-top:60px;align-items:center;gap:26px">
+      <div class="node" data-cue="1" data-fx="up">🌐 Browser<small>JS modules · no framework</small></div>
+      <div class="arrow" data-cue="1" data-in="0.8" data-fx="left">→</div>
+      <div class="node" style="border-color:var(--sun)" data-cue="1" data-in="1.2" data-fx="up">Vercel functions<small>/api/currentWeather · forecast · unsplashImage</small></div>
+      <div class="arrow" data-cue="1" data-in="2" data-fx="left">→</div>
+      <div class="col" style="gap:16px">
+        <div class="node" data-cue="1" data-in="2.4" data-fx="left">OpenWeather</div>
+        <div class="node" data-cue="1" data-in="2.8" data-fx="left">Unsplash</div>
+      </div>
+    </div>
+    <div class="chips" style="margin-top:50px">
+      <span class="chip" data-cue="1" data-in="4.2" data-fx="up"><i style="background:var(--amber);color:var(--amber)"></i>🔒 API keys never reach the browser</span>
+      <span class="chip sky" data-cue="2" data-fx="up"><i></i>first version → WePic for Android</span>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene center" data-id="outro" data-chapter="WePicHTML">
+    <div class="bg" style="background-image:url(media/new_york.jpg)" data-kb="out"></div>
+    <div style="position:relative">
+      <div class="word" style="font-size:170px" data-cue="0" data-fx="blur">WePic<span>HTML</span></div>
+      <p class="lead" style="color:#d6dcd8;margin:24px auto 0" data-cue="0" data-in="0.9">Live weather, real places.</p>
+      <p class="kicker" style="margin-top:40px;color:var(--muted)" data-cue="0" data-in="2" data-fx="fade">wepic.vercel.app · Built by Leo Suzuki</p>
+    </div>
+  </section>
+
+  <div class="progress"><i></i></div>
+</div>
+<script src="../engine.js"></script>
+</body>
+</html>

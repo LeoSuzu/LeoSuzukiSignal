@@ -10,6 +10,7 @@ only copies files that `index.html` links to.
 | AIOS — information video | `aios/` | `AIOS/AIOS_intro.*` |
 | Marjo Seki website | `marjo/` | `MarjoSeki/MarjoSeki_intro.*` |
 | WePic for Android | `wepic/` | `WePicAndroid/WePic_intro.*` |
+| WePicHTML (web app) | `wepichtml/` | `WePicApp/WePicHTML_intro.*` |
 | Art Maker Studio | `artmaker/` | `Art_Maker_Studio/ArtMakerStudio_intro.*` |
 
 Each build writes `.mp4` (1080p H.264 + AAC), `.vtt` (English captions) and `.jpg` (poster).

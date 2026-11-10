@@ -1,0 +1,70 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:03.515
+WePicHTML is the web version of WePic:
+
+00:00:03.515 --> 00:00:07.817
+live weather for any city, over a full-screen photo of the place.
+
+00:00:08.117 --> 00:00:10.750
+It runs in any browser, at wepic.
+
+00:00:10.750 --> 00:00:11.308
+vercel.
+
+00:00:11.308 --> 00:00:11.627
+app.
+
+00:00:13.077 --> 00:00:18.282
+Every visit opens on a random city, picked from forty-five places around the world.
+
+00:00:18.582 --> 00:00:19.241
+Kyoto,
+
+00:00:19.541 --> 00:00:20.461
+Reykjavik,
+
+00:00:20.761 --> 00:00:21.646
+New York.
+
+00:00:21.946 --> 00:00:23.947
+Or search for any city you like.
+
+00:00:25.397 --> 00:00:27.606
+A glass card shows the conditions:
+
+00:00:27.906 --> 00:00:34.032
+temperature, wind, rain, humidity, sunrise and sunset, and the local time there,
+
+00:00:34.332 --> 00:00:37.652
+plus the next fifteen hours, in three-hour steps.
+
+00:00:39.102 --> 00:00:40.795
+The photo follows the weather.
+
+00:00:41.095 --> 00:00:46.561
+OpenWeather conditions are reduced to six simple keywords, like rain, snow or clear.
+
+00:00:46.861 --> 00:00:51.277
+Unsplash is searched for the city with that keyword, and then for the city alone.
+
+00:00:51.577 --> 00:00:54.448
+Every photo is checked to load before it is shown.
+
+00:00:55.898 --> 00:00:59.373
+It is built with plain JavaScript modules and no framework.
+
+00:00:59.673 --> 00:01:03.187
+Small Vercel functions call OpenWeather and Unsplash,
+
+00:01:03.187 --> 00:01:05.839
+so the API keys never reach the browser.
+
+00:01:06.139 --> 00:01:10.862
+This web app was the first version of the idea, later rebuilt as a native Android app.
+
+00:01:12.312 --> 00:01:13.264
+WePicHTML.
+
+00:01:13.264 --> 00:01:15.740
+Live weather, real places.
