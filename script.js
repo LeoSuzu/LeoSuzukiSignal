@@ -102,4 +102,29 @@
   }
   if ('ResizeObserver' in window) new ResizeObserver(scheduleUpdate).observe(document.querySelector('main'));
   updateReading();
+
+  // Typing line under the name (from the old CV site): type, pause, erase, next line.
+  const typed = document.getElementById('typed-text');
+  if (typed && !reducedMotion.matches) {
+    const lines = [
+      'Freshly graduated from Tampere University of Applied Sciences — now looking for my first developer role!',
+      'From the land of ramen and cherry blossoms, now residing in the land of saunas and reindeer!',
+      'Rocking the service sector as an entrepreneur in Finland for 15 years.',
+      'Balancing coding with a love for cooking and travel — blending software development with global exploration.',
+    ];
+    let line = 0;
+    let chars = 0;
+    let erasing = false;
+    typed.textContent = '';
+    const tick = () => {
+      const text = lines[line];
+      chars += erasing ? -1 : 1;
+      typed.textContent = text.slice(0, chars);
+      let delay = erasing ? 25 : 50;
+      if (!erasing && chars === text.length) { erasing = true; delay = 1500; }
+      else if (erasing && chars === 0) { erasing = false; line = (line + 1) % lines.length; delay = 500; }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 500);
+  }
 })();
